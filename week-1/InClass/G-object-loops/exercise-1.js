@@ -3,11 +3,26 @@
 // Try to use both methods shown above to achieve this
 
 const studentGrades = {
-    tom: 20,
-    george: 17,
-    abdul: 19,
-  };
-  
+  tom: 20,
+  george: 17,
+  abdul: 19,
+};
+
+
+Object.keys(studentGrades).forEach((age) => {
+  if (studentGrades[age] > 18)
+
+    console.log(age.toUpperCase() + " " + studentGrades[age]);
+
+})
+
+
+
+
+
+
+
+
   // Prints
   // TOM - 20
   // ABDUL - 19
