@@ -9,12 +9,13 @@ const studentGrades = {
 };
 
 
-Object.keys(studentGrades).forEach((age) => {
-  if (studentGrades[age] > 18)
+Object.keys(studentGrades).forEach((key) => {
+  if (studentGrades[key] > 18)
 
-    console.log(age.toUpperCase() + " " + studentGrades[age]);
+    console.log(key.toUpperCase() + " " + studentGrades[key]);
 
-})
+});
+
 
 
 
