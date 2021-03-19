@@ -17,3 +17,12 @@ var car = {
 
 */
 
+let yacht = {
+    brand: "Admiral",
+    model: "Azimut",
+    color: "black",
+    horsepower: 180,
+
+}
+console.log(yacht);
+
