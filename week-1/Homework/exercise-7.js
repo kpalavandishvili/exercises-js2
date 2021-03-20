@@ -42,3 +42,13 @@ var writers = [
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+function write(personK) {
+personK.forEach(man => {
+  console.log(`Hi, my name is ${man.firstName} ${man.lastName}. I am ${man.age} years old, and work as a ${man.occupation}`);
+  
+})
+}
+  write(writers)
+    
+
+  
