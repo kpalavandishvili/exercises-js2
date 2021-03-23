@@ -41,9 +41,23 @@ var product2 = {
   price: 9.99,
   stock: 2
 };
+var product3 = {
+  id: 3,
+  name: "Redbull",
+  price: 2.35,
+  stock: 50
+};
+var product4 = {
+  id: 4,
+  name: "Cheetos",
+  price: 1.79,
+  stock: 20
+};
 
 products.push(product1);
 products.push(product2);
+products.push(product3);
+products.push(product4);
 
 var shoppingCart = {
   totalPrice: 0,
@@ -51,15 +65,35 @@ var shoppingCart = {
 };
 
 function addToShoppingCart(id){
-
+  const newProduct = products.find(p => p.id === id)
+  shoppingCart.selectedProducts.push(newProduct)
+  if (shoppingCart.selectedProducts.stock > 0) {
+    
+  }
+  console.log(newProduct, id);
+  shoppingCart.totalPrice += newProduct.price 
+  
 }
 
+
 function removeFromShoppingCart(id){
+  const removedProduct = products.find(p => p.id === id)
+  shoppingCart.selectedProducts.filter(p => p.id !== id)
+  shoppingCart.totalPrice -= removedProduct.price
 
 }
 
 function shop(){
+shoppingCart.selectedProducts.forEach(sp => {
+  products.forEach(p => {
+    if(p.id === sp.id){
+      p.stock --
+    }
+  })
+})
 
+shoppingCart.selectedProducts = []
+shoppingCart.totalPrice = 0
 }
 
 //results
