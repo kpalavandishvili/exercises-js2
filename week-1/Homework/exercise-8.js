@@ -103,7 +103,7 @@ var mentors = [
 mentors.forEach(m => {
 
   //step 1:
-  m.job === "Barcelona" && m.skills.includes("React") ?
+  m.job.city === "Barcelona" && m.skills.includes("React") ?
     console.log(`Hi, my name is ${m.firstName}  ${m.lastName}. I work in Barcelona and i know React`) : null //Don`t make anything
 
   //step2:

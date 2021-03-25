@@ -89,13 +89,20 @@ function exerciseThree(books) {
 
   const flexBoxContent = document.createElement("div")
   content.appendChild(flexBoxContent);
-  
+
   const ul = document.createElement("ul");
   flexBoxContent.appendChild(ul);
- //style
 
- ul.style.display = "flex";
- ul.style.justifyContent = "space-around";
+
+
+
+  //flexBoxes with space-around
+  //ul style
+
+  ul.style.display = "flex";
+  ul.style.justifyContent = "space-around";
+  ul.style.listStyle = "none"
+  ul.style.textAlign = "center"
 
 
 
@@ -107,12 +114,17 @@ function exerciseThree(books) {
     const p = document.createElement("p")
     p.textContent = book.title + " - " + book.author
     li.appendChild(p)
+
     const image = document.createElement("img");
-    image.style.height = "150px" 
-    image.style.width = "160px"                   //css styles
-    image.src = book.url; //for each image book taking url
+    //css styles img
+    image.style.height = "300px"
+    image.style.width = "200px"
+    image.style.margin = "100px"
+
+
+    image.src = book.url; //for each image book is taking url prop
     li.appendChild(image)
-    li.style.backgroundColor = book.alreadyRead ? "green" : "red"
+    li.style.backgroundColor = book.alreadyRead ? "green" : "red" //false or true
     ul.appendChild(li)
 
 
@@ -162,12 +174,14 @@ const books = [
     title: "The Most Human Human",
     author: "Brian Christian",
     alreadyRead: true,
+    //i have add some url prop
     url: "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg"
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
     alreadyRead: true,
+    //i have add some url prop
     url: "https://m.media-amazon.com/images/I/41uPjEenkFL._SX260_.jpg"
   }
 ];
