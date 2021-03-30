@@ -19,9 +19,9 @@
 
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
-  arrayOfPeople.forEach(h => {
+  arrayOfPeople.forEach(person => {
     const h1 = document.createElement("h1");
-    h1.textContent = h.name;
+    h1.textContent = person.name;
     content.appendChild(h1)
 
     const h2 = document.createElement("h2");
