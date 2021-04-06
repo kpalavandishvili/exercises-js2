@@ -10,3 +10,28 @@ user latitude and longitude.
 
 ================
 */
+
+const form = document.querySelector("form");
+const output = document.querySelector("h3");
+
+form.addEventListener("submit", (event => {
+  event.preventDefault(); //refresh page
+  const lat = document.querySelector("#lat").value.trim();
+  const lon = document.querySelector("#lon").value.trim();
+
+  if (isNaN(parseFloat(lat)) || isNaN(parseFloat(lon))) {
+    output.innerText = "Please enter valid data";
+    return;
+  }
+  let url = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}35&lon=${lon}`;
+  output.innerText = "Loading...";
+  fetch(url)
+    .then(function (response) {
+      return response.json()
+
+    })
+    .then(function (data) {
+      output.innerText = `${data.main.temp}C`;
+
+    })
+}))
