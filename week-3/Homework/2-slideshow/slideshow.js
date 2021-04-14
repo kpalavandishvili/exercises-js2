@@ -21,16 +21,39 @@ function moveBack() {
 
 
 function moveForward() {
+  if (i === images.length - 1) {
+    i = 0 ;
+   
+  } else {
+     i = i+1; 
+  }
+  uploadImages();
   
 }
 
-// let buttonAutoBack = document.getElementById("auto-back").addEventListener("click", moveAutoBack);
-let buttonBack = document.getElementById("back").addEventListener("click", moveBack);
-// let buttonStop = document.getElementById("stop").addEventListener("click", stopIt);
-// let buttonAutoForward = document.getElementById("auto-forward").addEventListener("click", moveAutoForward);
-let buttonForward = document.getElementById("forward").addEventListener("click", moveForward);
+let interval;
+function moveAutoForward() {
+  interval = setInterval(moveForward, 3000);
+}
 
-// console.log(buttonAutoBack);
+ 
+
+function moveAutoBack() {
+ interval = setInterval(moveBack,3000);
+}
+function stopIt() {
+  clearInterval(interval)
+  
+  
+}
+
+let buttonBack = document.getElementById("back").addEventListener("click", moveBack);
+let buttonForward = document.getElementById("forward").addEventListener("click", moveForward);
+let buttonAutoForward = document.getElementById("auto-forward").addEventListener("click", moveAutoForward);
+let buttonAutoBack = document.getElementById("auto-back").addEventListener("click", moveAutoBack);
+let buttonStop = document.getElementById("stop").addEventListener("click", stopIt);
+
+
 
 
 
